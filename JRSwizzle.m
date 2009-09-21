@@ -6,7 +6,11 @@
 	***************************************************************************/
 
 #import "JRSwizzle.h"
+#if TARGET_OS_IPHONE
+#import <objc/runtime.h>
+#else
 #import <objc/objc-class.h>
+#endif
 
 #define SetNSError(ERROR_VAR, FORMAT,...)	\
 	if (ERROR_VAR) {	\
